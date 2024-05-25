@@ -1,7 +1,9 @@
 export interface CounterState {
-    counter: number
+    counter: number,
+    channelName: string
 }
 
 export const initialState = {
-    counter: 4
+    counter: 4,
+    channelName: 'ngRx'
 }

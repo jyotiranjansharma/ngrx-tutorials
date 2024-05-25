@@ -11,9 +11,15 @@ import { customincrement } from '../counter/state/counter.action';
 export class CustomCounterInputComponent implements OnInit {
 
     value!: string;
+    channelName!: string;
     constructor(private store: Store<{ counter: CounterState }>) { }
 
     ngOnInit(): void {
+        this.store.select('counter').subscribe(
+            data => {
+                this.channelName = data.channelName;
+            }
+        )
     }
 
     addTo() {
