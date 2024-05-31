@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter/counter.component';
 import { PostsListComponent } from './posts/posts-list/posts-list.component';
 import { AddPostevtoComponent } from './posts/add-postevto/add-postevto.component';
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent},
@@ -12,7 +13,8 @@ const routes: Routes = [
         path: 'posts', 
         component: PostsListComponent,
         children: [
-            { path: 'add', component: AddPostevtoComponent}
+            { path: 'add', component: AddPostevtoComponent},
+            { path: 'edit/:id', component: EditPostComponent}
         ]
     }
 ];
