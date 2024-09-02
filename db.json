@@ -1,0 +1,18 @@
+{
+    "customers": [
+        {
+            "name": "jai",
+            "phone": "7411201157",
+            "address": "thubrahalli",
+            "membership": "platinum",
+            "id": 1
+        },
+        {
+            "name": "jaish",
+            "phone": "7411201178",
+            "address": "thubrahalli",
+            "membership": "pro",
+            "id": 2
+        }
+    ]
+}

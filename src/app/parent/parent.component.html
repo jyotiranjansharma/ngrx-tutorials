@@ -1,0 +1,19 @@
+<div>
+    
+    <app-child [(childProperty)]="parentProperty" [childMessage]="parentMessage" >
+        <p>This content is projected!</p>
+        <p *ngIf="showHeader" slot="header">Header Content</p>
+        <p slot="footer">Footer Content</p>
+
+
+        <ng-template #headerContent1>
+            <p>Dynamic Header Content</p>
+        </ng-template>
+        <ng-template #footerContent1>
+            <p>Dynamic Footer Content</p>
+        </ng-template>
+    </app-child>
+    <h2>Parent component</h2>
+    <p>message from child: {{messageFromChild}}</p>
+    <p>Parent Property: {{ parentProperty }}</p>
+</div>

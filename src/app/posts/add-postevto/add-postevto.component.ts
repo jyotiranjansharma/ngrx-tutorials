@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Post } from 'src/app/models/posts.model';
+import { addPost } from '../state/posts.action';
 
 @Component({
     selector: 'app-add-postevto',
@@ -9,9 +12,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class AddPostevtoComponent implements OnInit {
 
     postForm!: FormGroup;
-    constructor() { }
+    // constructor() { }
+    store = inject(Store);
 
-    ngOnInit(): void {
+    ngOnInit() {
         this.postForm = new FormGroup({
             title: new FormControl(null, [
                 Validators.required,
@@ -43,6 +47,12 @@ export class AddPostevtoComponent implements OnInit {
         }
 
         console.log(this.postForm.value);
+        const post: Post = {
+            title: this.postForm.value.title,
+            description: this.postForm.value.description
+        }
+
+        this.store.dispatch(addPost({post}));
     }
 
 }

@@ -1,0 +1,16 @@
+<div>
+    <h2>Child component</h2>
+    <ng-content></ng-content>
+    <ng-content select="[slot='header']"></ng-content>
+    <ng-content select="[slot='footer']"></ng-content>
+    <p>message from parent component : {{childMessage}}</p>
+    <button (click)="sendMessage()" class="btn btn-light">Send msg to parent</button>
+
+
+    <ng-container #headerContainer></ng-container>
+    <div>Main Content</div>
+    <ng-container #footerContainer></ng-container>
+    <input [(ngModel)]="childProperty" (ngModelChange)="onChildPropertyChange($event)" />
+    <p>Child Property: {{ childProperty }}</p>
+    <hr/>
+</div>
