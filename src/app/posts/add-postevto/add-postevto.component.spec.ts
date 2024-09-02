@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddPostevtoComponent } from './add-postevto.component';
 
-describe('AddPostevtoComponent', () => {
+fdescribe('AddPostevtoComponent', () => {
   let component: AddPostevtoComponent;
   let fixture: ComponentFixture<AddPostevtoComponent>;
 

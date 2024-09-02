@@ -1,0 +1,16 @@
+<div>
+    <h2>Model Driven/Reactive Forms</h2>
+    <hr/>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="mb-2">
+            <input type="text" id="name" formControlName="name" placeholder="Enter name">
+            <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" [ngStyle]="{'color': 'red'}">Name is required.</div>
+        </div>
+        <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+    </form>
+
+    <div>
+        <h5>Form data after submit:</h5>
+        {{fromForm ? fromForm.name : ''}}
+    </div>
+</div>

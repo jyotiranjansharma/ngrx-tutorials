@@ -1,0 +1,15 @@
+<div>
+    <h2>Template Driven Forms</h2>
+    <hr/>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="mb-2">
+            <input type="text" id="name" name="name" ngModel required placeholder="Enter name">
+            <div *ngIf="form.submitted && form.controls['name'].errors?.['required']" [ngStyle]="{'color': 'red'}">Name is required.</div>
+        </div>
+        <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+    </form>
+    <div>
+        <h5>Form data after submit: </h5>
+        <p *ngIf="fromForm">{{fromForm.name}}</p>
+    </div>
+</div>
